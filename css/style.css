@@ -3,11 +3,18 @@ body {
     padding: 0px;
 }
 
-img.svg {
+.sidebar img.svg, input.svg {
     height: 30px;
     width: auto;
     display: inline;
 }
+
+.top img.svg, input.svg {
+    height: 20px;
+    width: auto;
+    display: inline;
+}
+
 .container {
     display: grid;
     height: 100vh;
@@ -25,8 +32,25 @@ img.svg {
 
 .header .top {
     grid-row: 1 / 2;
+    padding: 20px 30px 20px 50px;
     display: flex;
+    justify-content: space-between;
+}
 
+.header .top .left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header .top .right {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+#searchbar {
+    width: 400px;
 }
 
 .header .bottom{
