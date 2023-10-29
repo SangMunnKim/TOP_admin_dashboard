@@ -3,10 +3,21 @@ body {
     padding: 0px;
 }
 
+.sidebar {
+    color: #e0f2fe;
+}
+
+.sidebar {
+
+
+    color: #ffffff(253, 253, 253); 
+}
+
 .sidebar img.svg, input.svg {
     height: 30px;
     width: auto;
     display: inline;
+    
 }
 
 .top img.svg, input.svg {
@@ -52,6 +63,10 @@ body {
 
 #searchbar {
     width: 400px;
+    height: 20px;
+    padding-left: 10px;
+    border-radius: 20px;
+    background-color: #f0f9ff;
 }
 
 .header .bottom{
@@ -70,9 +85,20 @@ body {
     gap: 20px;
 }
 
+.header button {
+    background-color: #0369a1;
+    border: none;
+    width: 120px;
+    height: 25px;
+    color: white;
+    font-weight: bold;
+    border-radius: 20px;
+
+}
+
 nav.sidebar {
     grid-area: 1 / 1 / 3 / 2;
-    background-color: #bae6fd;
+    background-color: #0284c7;
     padding: 30px;
 
     display: grid;
@@ -114,14 +140,17 @@ main.content {
 
     display: grid;
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+    "projects announcements"
+    "projects trending";
 }
 
 main.content .projects {
-    grid-column: 1 / 2;
-    grid-row: 1 / 3;
+    grid-area: projects;
     padding: 20px; 
+}
 
+main.content .projects .cards {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
     gap: 15px;
@@ -129,12 +158,10 @@ main.content .projects {
 
 main.content .projects > h4 {
     grid-column: 1 / -1;
-    grid-row: 1 / 2;
-    margin: 0px;
 }
 
 main.content .projects .card {
-    min-height: 200px;
+    min-height: 300px;
     width: auto;
     border: 1px solid #0c4a6e;
     border-radius: 20px;
@@ -173,17 +200,16 @@ main.content .projects .card .text-block span {
     width: auto;
 }
 
-main.content .announcements > h4{
-    grid-column: 1 / -1;
-    margin: 0px;
+main.content .announcements {
+    grid-area: announcements;
+    padding: 20px;
+
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
-main.content .announcements {
-    grid-column: 2 /3;
+main.content .announcements > h4{
     grid-row: 1 / 2;
-    padding: 20px;
-    display: grid;
-    gap: 15px;
 }
 
 main.content .announcements .announcement-content {
@@ -192,6 +218,8 @@ main.content .announcements .announcement-content {
     background-color: #7dd3fc;
 
     padding: 20px;
+    grid-row: 2 / 3;
+    
 }
 
 main.content .announcements .announcement-content .border {
@@ -201,8 +229,7 @@ main.content .announcements .announcement-content .border {
 }
 
 main.content .trending {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-area: trending;
     padding: 20px;
 }
 
